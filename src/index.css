@@ -161,23 +161,48 @@ p {
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
 }
+
 .icon {
   background: transparent;
   border: transparent;
   font-size: 1.5rem;
   cursor: pointer;
   color: hsl(210, 22%, 49%);
-  transition: all 0.3s linear;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1.5);
 }
+
 .icon:hover {
-  color: hsl(205, 78%, 60%);
+  color: hsl(87, 78%, 60%);
+  transform: translateY(-5px);
 }
+
+.icon::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%; 
+  background: hsl(87, 78%, 60%);
+  transition: height 0.1s cubic-bezier(0.25, 1, 0.5, 1.25);
+  top: 10px;
+  opacity: 0;
+}
+
+.icon:hover::before {
+  opacity: 1;
+}
+
+.icon:not(:hover) {
+  transform: translateY(0);
+}
+
 .active {
   color: hsl(205, 78%, 60%);
 }
+
 .btn {
   margin: 0 auto;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .caption-style{
   font-size: 50%;
