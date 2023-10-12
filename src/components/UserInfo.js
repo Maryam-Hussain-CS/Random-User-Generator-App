@@ -14,7 +14,7 @@ const UserInfo = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const { data, isLoading, refetch } = useGetUsersQuery();
-  const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
+  const defaultImage = "useGetUsersQuery/portraits/men/75.jpg";
 
   useEffect(() => {
     if (data) {
